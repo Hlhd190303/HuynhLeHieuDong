@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="TH2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesom...in.css">
+    <style>                 
+        bai2{
+            display: flex;
+            justify-content: center;
+        
+        }
+        .name2 {
+            font-size: 25px;
+            color: rgb(25, 61, 169);
+        }
+        .bai2-text {
+            color:rgb(13, 100, 124);
+        }
+        .bai2-container{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+            background-color: #C7C8CC;
+            padding: 10px;
+        }   
+        .bai2-form-container{
+        display: grid;
+        grid-template-columns: 200px 200px;
+        row-gap: 10px;
+        column-gap: 10px;
+        }
+        .bai2-textarea{
+            margin-top: 10px;
+            width: 100%;
+            height: 100px;
+        }
+        .bai2-input{
+            padding: 5px;
+            border: none;
+        }
+        .btn-bai2{
+            width: 100px;
+            height: 50px;
+            margin: 10px;
+            background-color: #bb0645;
+            border: none;
+            color: white;
+        }
+        .line{
+            background-color: rgb(31, 210, 97);
+            height: 1px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body> 
+    <div class="name2">Bài 2</div>
+<div class="bai2">
+    <div class="bai2-container">
+        <div class="bai2-textcontainer">
+            <h1 class="bai2-text">Đóng góp ý kiến về sp</h1>
+            <p class="bai2-para">Góp ý của bạn sẽ được chúng tôi xem xét. </p>
+            <p class="bai2-para">Vui lòng nhập tiếng Việt có dấu và ý kiến nên viết chi tiết rõ ràng. </p>
+        </div>
+        <form action="" class="bai2-form">
+      <div class="bai2-form-container">
+        <input placeholder="Họ và tên" type="text" name="ten" id="bai2-ten" class="bai2-input">
+        <input type="text" name="phoneNumb" id="bai2-sdt" placeholder="Số điện thoại" class="bai2-input"> 
+        <select type="text" name="option" id="bai2-option" class="bai2-input" >
+            <option value="1">Chọn loại khách hàng</option>
+            <option value="2">VIP</option>
+            <option value="3">VVIP</option>
+        </select>
+        <input type="text" name="CardId" id="bai2-mathe" placeholder="Mã thẻ" class="bai2-input">  
+        <input type="email" name="email" id="bai2-email" placeholder="E-mail" class="bai2-input"> 
+        <input type="email" name="invoiceId" id="bai2-invoiceid" placeholder="Mã hóa đơn" class="bai2-input"> 
+      </div>
+      <textarea id="input-description" class="bai2-textarea" class="bai2-input" required></textarea>
+        </form>
+        <button class="btn-bai2" type="submit" onclick="bai2()" >Gửi ý kiến</button>
+    </div>
+    <div id="feedback-display"></div>
+
+</div>
+<script>
+    function bai2() {
+        const name = document.getElementById("bai2-ten").value;
+        const phone = document.getElementById("bai2-sdt").value;
+        const email = document.getElementById("bai2-email").value;
+        const option = document.getElementById("bai2-option");
+        const optionText = option.options[option.selectedIndex].text;
+        const mathe = document.getElementById("bai2-mathe").value;
+        const invoiceid = document.getElementById("bai2-invoiceid").value;
+        const textarea = document.getElementById("input-description").value;
+    
+        const currentDate = new Date();
+        const currentTime = currentDate.toLocaleString();
+
+        const feedbackDisplay = document.getElementById("feedback-display");
+        feedbackDisplay.innerHTML =
+            "<p><strong>Đánh giá:</strong></p>" +
+            "<p>Họ và tên: " + name + "</p>" +
+            "<p>Thời gian: " + currentTime + "</p>" +
+            "<p>Ý kiến phản hồi: " + textarea + "</p>";
+    }
+    
+</script>
+</body>
+</html>
